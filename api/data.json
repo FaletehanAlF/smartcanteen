@@ -1,0 +1,40 @@
+{
+  "menu": [
+    {
+      "image": "https://i.pinimg.com/736x/d3/7b/f1/d37bf17c96e03b533f0f4b1c9b130011.jpg",
+      "judul": "Nasi Goreng",
+      "price": "Rp 10.000",
+      "kategori": "Makanan"
+    },
+    {
+      "image": "https://i.pinimg.com/736x/7f/73/01/7f7301b37a8d281a429b45aa661222a6.jpg",
+      "judul": "Kentang Goreng",
+      "price": "Rp 5.000",
+      "kategori": "Makanan"
+    },
+    {
+      "image": "https://i.pinimg.com/736x/de/39/12/de391251ad8e6f770f269e7bab7b13c6.jpg",
+      "judul": "Es Kopi",
+      "price": "Rp 7.000",
+      "kategori": "Minuman"
+    },
+    {
+      "image": "https://i.pinimg.com/736x/dc/64/31/dc6431ef3928bbf6fd221052198ca5fd.jpg",
+      "judul": "Mie Goreng",
+      "price": "Rp 5.000",
+      "kategori": "Makanan"
+    },
+    {
+      "image": "https://i.pinimg.com/736x/46/d5/7a/46d57a28d13c994d9c460321927631bf.jpg",
+      "judul": "Roti Bakar",
+      "price": "Rp 8.000",
+      "kategori": "Cemilan"
+    },
+    {
+      "image": "https://i.pinimg.com/736x/8d/6c/85/8d6c853d1827d681cb6d1fb5607190d2.jpg",
+      "judul": "Matcha Latte",
+      "price": "Rp 7.000",
+      "kategori": "Minuman"
+    }
+  ]
+}

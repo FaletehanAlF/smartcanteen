@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smartcanteen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#F97316',
+            secondary: '#FFF7ED',
+            dark: '#1C1C1E',
+          },
+          fontFamily: {
+            jakarta: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .sidebar-icon { transition: all 0.2s; }
+    .sidebar-icon:hover { color: #F97316; }
+    .sidebar-icon.active { color: #F97316; }
+    .category-card { transition: transform 0.2s, box-shadow 0.2s; }
+    .category-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(249,115,22,0.15); }
+    .product-card { transition: transform 0.2s, box-shadow 0.2s; }
+    .product-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.12); }
+    .voucher-card { transition: transform 0.2s; }
+    .voucher-card:hover { transform: scale(1.02); }
+    .banner-slide { animation: fadeIn 0.6s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .skeleton { background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; animation: shimmer 1.4s infinite; }
+    @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+    ::-webkit-scrollbar { width: 4px; height: 4px; }
+    ::-webkit-scrollbar-track { background: #fef3e2; }
+    ::-webkit-scrollbar-thumb { background: #F97316; border-radius: 4px; }
+    .badge-cart { animation: pop 0.3s ease; }
+    @keyframes pop { 0% { transform: scale(0.7); } 60% { transform: scale(1.2); } 100% { transform: scale(1); } }
+  </style>
+</head>
+<body class="bg-gray-50 text-dark">
+
+<div class="flex h-screen overflow-hidden">
+
+  <!-- SIDEBAR -->
+  <aside class="w-20 lg:w-56 bg-white border-r border-gray-100 flex flex-col py-6 px-3 lg:px-5 shadow-sm z-10 shrink-0">
+    <!-- Logo -->
+    <div class="flex items-center gap-2 mb-10 px-1">
+      <div class="w-9 h-9 bg-primary rounded-xl flex items-center justify-center shadow-md">
+        <span class="text-white text-lg">🍴</span>
+      </div>
+      <span class="hidden lg:block font-extrabold text-xl text-dark tracking-tight"><span class="text-primary">Smartcanteen</span></span>
+    </div>
+
+    <!-- Nav -->
+    <nav class="flex flex-col gap-1 flex-1">
+      <a href="#" class="sidebar-icon active flex items-center gap-3 px-3 py-3 rounded-xl bg-orange-50 font-semibold text-sm">
+        <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        <span class="hidden lg:block">Beranda</span>
+      </a>
+      <a href="#" class="sidebar-icon flex items-center gap-3 px-3 py-3 rounded-xl text-gray-500 hover:bg-orange-50 font-medium text-sm">
+        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <span class="hidden lg:block">Menu</span>
+      </a>
+      <a href="#" class="sidebar-icon flex items-center gap-3 px-3 py-3 rounded-xl text-gray-500 hover:bg-orange-50 font-medium text-sm">
+        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span class="hidden lg:block">Favorit</span>
+      </a>
+      <a href="#" class="sidebar-icon flex items-center gap-3 px-3 py-3 rounded-xl text-gray-500 hover:bg-orange-50 font-medium text-sm">
+        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <span class="hidden lg:block">Profil</span>
+      </a>
+      <a href="#" class="sidebar-icon flex items-center gap-3 px-3 py-3 rounded-xl text-gray-500 hover:bg-orange-50 font-medium text-sm">
+        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <span class="hidden lg:block">Chat</span>
+      </a>
+    </nav>
+
+    <!-- User -->
+    <div class="flex items-center gap-3 px-1 pt-4 border-t border-gray-100">
+      <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Faletehan" class="w-9 h-9 rounded-full bg-orange-100 shrink-0" alt="avatar"/>
+      <div class="hidden lg:block">
+        <p class="text-xs text-gray-400 leading-none">Halo 👋</p>
+        <p class="font-bold text-sm leading-snug">Faletehan</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-1 overflow-y-auto bg-gray-50">
+
+    <!-- TOPBAR -->
+    <header class="sticky top-0 z-20 bg-white border-b border-gray-100 shadow-sm px-6 py-3 flex items-center gap-4">
+      <button class="text-gray-400 hover:text-primary transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+
+      <!-- Search -->
+      <div class="flex-1 max-w-xl relative">
+        <div class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+        <input type="text" placeholder="Mencari makanan..." class="w-full pl-9 pr-12 py-2.5 text-sm border-2 border-primary rounded-xl focus:outline-none bg-orange-50 placeholder-gray-400 text-dark" id="searchInput" oninput="filterProducts()"/>
+        <button class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-primary">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        </button>
+      </div>
+
+      <!-- Icons -->
+      <div class="flex items-center gap-3 ml-auto">
+        <button class="relative p-2 text-gray-500 hover:text-primary transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
+        </button>
+        <button class="relative p-2 text-gray-500 hover:text-primary transition" onclick="toggleCart()">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span id="cartBadge" class="badge-cart absolute -top-0.5 -right-0.5 bg-primary text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
+        </button>
+        <button class="p-2 text-gray-500 hover:text-primary transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="p-5 lg:p-7 max-w-6xl mx-auto space-y-7">
+
+      <!-- BANNER -->
+      <div class="relative rounded-2xl overflow-hidden shadow-lg h-44 lg:h-56 bg-gradient-to-br from-amber-700 via-orange-600 to-yellow-500">
+        <div class="absolute inset-0 opacity-20" style="background-image:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22><circle cx=%2230%22 cy=%2230%22 r=%2228%22 fill=%22none%22 stroke=%22white%22 stroke-width=%221%22 opacity=%220.3%22/></svg>'); background-size:60px;"></div>
+        <div class="relative z-10 flex h-full">
+          <div class="flex flex-col justify-center pl-8 lg:pl-12 pr-4 flex-1">
+            <span class="text-yellow-200 text-xs font-semibold uppercase tracking-widest mb-1">Promo Hari Ini</span>
+            <h2 class="text-white text-2xl lg:text-4xl font-extrabold leading-tight">Super <span class="text-yellow-300">Delicious</span><br>Food Menu</h2>
+            <p class="text-orange-100 text-xs mt-1 mb-4">Today's Best Deal! Gratis Ongkir 24/7</p>
+            <button class="bg-white text-primary text-xs font-bold px-5 py-2.5 rounded-full w-fit shadow hover:bg-yellow-50 transition">Pesan Sekarang →</button>
+          </div>
+          <div class="flex items-end justify-end pr-4 pb-0 relative">
+            <div class="absolute top-4 right-4 bg-yellow-400 text-white font-black text-center rounded-full w-14 h-14 flex flex-col items-center justify-center shadow-lg">
+              <span class="text-[10px] leading-none">UP TO</span>
+              <span class="text-lg leading-none">50%</span>
+              <span class="text-[9px] leading-none">OFF</span>
+            </div>
+            <span class="text-7xl lg:text-8xl mb-0" style="filter:drop-shadow(0 4px 16px rgba(0,0,0,0.18))">🍗</span>
+          </div>
+        </div>
+        <!-- dots -->
+        <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+          <span class="w-5 h-1.5 bg-white rounded-full opacity-100"></span>
+          <span class="w-1.5 h-1.5 bg-white rounded-full opacity-50"></span>
+          <span class="w-1.5 h-1.5 bg-white rounded-full opacity-50"></span>
+        </div>
+      </div>
+
+      <!-- CATEGORIES -->
+      <div>
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="font-bold text-base lg:text-lg text-dark">Kategori</h3>
+          <a href="#" class="text-primary text-sm font-semibold hover:underline">Lihat Semua ›</a>
+        </div>
+        <div class="flex gap-3 overflow-x-auto pb-2" id="categoryList">
+          <!-- populated by JS -->
+        </div>
+      </div>
+
+      <!-- PRODUCTS -->
+      <div>
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="font-bold text-base lg:text-lg text-dark" id="productTitle">Menu Populer</h3>
+          <a href="#" class="text-primary text-sm font-semibold hover:underline">Lihat Semua ›</a>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4" id="productGrid">
+          <!-- Skeleton -->
+          <div class="skeleton h-44 rounded-2xl"></div>
+          <div class="skeleton h-44 rounded-2xl"></div>
+          <div class="skeleton h-44 rounded-2xl"></div>
+          <div class="skeleton h-44 rounded-2xl"></div>
+          <div class="skeleton h-44 rounded-2xl"></div>
+        </div>
+      </div>
+
+      <!-- VOUCHER -->
+      <div>
+        <h3 class="font-bold text-base lg:text-lg text-dark mb-4">Voucher Diskon</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <!-- Voucher 1 -->
+          <div class="voucher-card cursor-pointer rounded-2xl overflow-hidden shadow flex" style="background: linear-gradient(135deg,#0d9488,#14b8a6)">
+            <div class="bg-yellow-400 flex items-center justify-center px-3">
+              <span class="text-white text-[10px] font-black uppercase tracking-widest" style="writing-mode:vertical-rl;transform:rotate(180deg)">COUPON</span>
+            </div>
+            <div class="flex-1 p-4">
+              <p class="text-white/80 text-[10px] font-semibold uppercase tracking-wider">Gift Voucher</p>
+              <p class="text-white font-extrabold text-2xl leading-none">20% OFF</p>
+              <p class="text-white/70 text-[10px] mt-1">Min. belanja Rp 50.000</p>
+              <button class="mt-3 bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-full hover:bg-orange-600 transition">Klaim</button>
+            </div>
+          </div>
+
+          <!-- Voucher 2 -->
+          <div class="voucher-card cursor-pointer rounded-2xl overflow-hidden shadow flex" style="background: linear-gradient(135deg,#3b5bdb,#6741d9)">
+            <div class="flex-1 p-4">
+              <p class="text-white/70 text-[10px] font-semibold uppercase tracking-wider">Flash Sale</p>
+              <p class="text-white font-extrabold text-3xl leading-none">50% <span class="text-lg">OFF</span></p>
+              <p class="text-white/70 text-[10px] mt-1">PROMO CODE: <span class="font-bold text-white">SAVE50</span></p>
+              <button class="mt-3 bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-full hover:bg-orange-600 transition">Klaim</button>
+            </div>
+            <div class="flex items-center justify-center px-4 opacity-20">
+              <svg class="w-14 h-14 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+          </div>
+
+          <!-- Voucher 3 -->
+          <div class="voucher-card cursor-pointer rounded-2xl overflow-hidden shadow flex" style="background: linear-gradient(135deg,#fff1f2,#ffe4e6)">
+            <div class="bg-primary flex items-center justify-center px-3">
+              <span class="text-2xl">🛍</span>
+            </div>
+            <div class="flex-1 p-4">
+              <p class="text-gray-500 text-[10px] font-semibold uppercase tracking-wider">Spesial</p>
+              <p class="text-primary font-extrabold text-2xl leading-none">VOUCHER</p>
+              <p class="text-gray-500 text-[10px] mt-1">Bebas ongkir semua menu</p>
+              <button class="mt-3 bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-full hover:bg-orange-600 transition">Klaim</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /content -->
+  </main>
+
+  <!-- CART PANEL -->
+  <div id="cartPanel" class="hidden w-72 bg-white border-l border-gray-100 flex flex-col shadow-xl z-10">
+    <div class="px-5 py-4 border-b border-gray-100 flex items-center justify-between">
+      <h3 class="font-bold text-base">Keranjang 🛒</h3>
+      <button onclick="toggleCart()" class="text-gray-400 hover:text-primary">✕</button>
+    </div>
+    <div class="flex-1 overflow-y-auto px-4 py-3 space-y-3" id="cartItems">
+      <p class="text-center text-gray-400 text-sm mt-10">Keranjang masih kosong 🍽</p>
+    </div>
+    <div class="p-4 border-t border-gray-100">
+      <div class="flex justify-between text-sm font-semibold mb-3">
+        <span class="text-gray-500">Total</span>
+        <span class="text-primary" id="cartTotal">Rp 0</span>
+      </div>
+      <button class="w-full bg-primary text-white font-bold py-3 rounded-xl hover:bg-orange-600 transition text-sm">Pesan Sekarang</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- TOAST -->
+<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-dark text-white text-sm px-5 py-2.5 rounded-full shadow-xl opacity-0 transition-opacity duration-300 pointer-events-none z-50">
+  Ditambahkan ke keranjang ✓
+</div>
+
+<script src="../script/home.js"></script>
+</body>
+</html>

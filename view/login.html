@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../src/output.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body class="bg-[#f3f4f6] min-h-screen flex items-center justify-center font-sans px-4">
+
+    <!-- LOGIN CARD -->
+    <div
+        class="w-full max-w-4xl h-[660px] bg-white rounded-[26px] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.08)] grid lg:grid-cols-2">
+
+        <!-- LEFT -->
+        <div class="relative hidden lg:block">
+
+            <img src="../asset/canten.jpg" class="w-full h-full object-cover">
+
+            <!-- OVERLAY -->
+            <div class="absolute inset-0 bg-black/50"></div>
+
+            <!-- TEXT -->
+            <div class="absolute bottom-10 left-8 z-10 text-white">
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="flex items-center justify-center px-8 py-8">
+
+            <div class="w-full max-w-sm">
+
+                <!-- TOP -->
+                <div class="flex justify-end mb-7">
+
+                    <a href="register.html"
+                        class="bg-blue-600 text-white px-5 py-2 rounded-full text-xs font-medium hover:bg-gray-800 transition">
+                        Sign up
+                    </a>
+
+                </div>
+
+                <!-- TITLE -->
+                <div class="mb-7">
+
+                    <h1 class="text-3xl font-bold text-orange-600 mb-3">
+                        Login to Your Account
+                    </h1>
+
+                    <p class="text-balck-400 text-sm">
+                        welcome please enter your details
+                    </p>
+
+                </div>
+
+                <!-- FORM -->
+                <!-- FORM -->
+                <form id="loginForm" class="space-y-4">
+
+                    <!-- EMAIL -->
+                    <div>
+
+                        <label class="block text-sm font-medium text-black-400 mb-2">
+                            Email
+                        </label>
+
+                        <input type="email" id="email" placeholder="Masukan Email Anda"
+                            class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm outline-none focus:border-[#1b2569] transition">
+
+                    </div>
+
+                    <!-- PASSWORD -->
+                    <div>
+
+                        <label class="block text-sm font-medium text-black-400 mb-4">
+                            Password
+                        </label>
+
+                        <div class="relative">
+
+                            <input type="password" id="password" placeholder="Masukan Password Anda"
+                                class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm outline-none focus:border-[#1b2569] transition">
+
+                            <button type="button" id="toggle-password"
+                                class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">
+
+                                <i data-feather="eye" class="w-4 h-4"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex items-center justify-between mt-2 text-sm">
+                        <!-- Remember Me -->
+                        <label class="flex items-center gap-2 cursor-pointer text-gray-600">
+                            <input type="checkbox" id="rememberMe" class="w-4 h-4 accent-blue-500 rounded" />
+                            <span>Remember me</span>
+                        </label>
+
+                        <!-- Forget Password -->
+                        <a href="#" class="text-blue-500 hover:text-blue-600 transition">
+                            Forget password?
+                        </a>
+                    </div>
+
+                    <!-- NOTIF -->
+                    <p id="notif" class="hidden text-sm font-medium">
+                    </p>
+
+                    <!-- BUTTON -->
+                    <button type="submit"
+                        class="w-full bg-orange-400 text-white py-3 rounded-xl text-sm font-semibold hover:bg-[#1b2569] transition duration-300 mt-2">
+
+                        Login
+
+                    </button>
+
+                </form>
+
+                <!-- LINE -->
+                <div class="flex items-center gap-3 my-6">
+
+                    <div class="flex-1 h-px bg-gray-200"></div>
+
+                    <p class="text-xs text-black-400">
+                        Login With
+                    </p>
+
+                    <div class="flex-1 h-px bg-gray-200"></div>
+
+                </div>
+
+                <!-- SOCIAL -->
+                <div class="grid grid-cols-2 gap-3">
+
+                    <!-- GOOGLE -->
+                    <button
+                        class="border border-gray-200 rounded-xl py-3 flex items-center justify-center gap-2 hover:bg-gray-50 transition">
+
+                        <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" class="w-4 h-4">
+
+                        <span class="text-sm font-medium text-gray-700">
+                            Google
+                        </span>
+
+                    </button>
+
+                    <!-- FACEBOOK -->
+                    <button
+                        class="border border-gray-200 rounded-xl py-3 flex items-center justify-center gap-2 hover:bg-gray-50 transition">
+
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="w-4 h-4">
+
+                        <span class="text-sm font-medium text-gray-700">
+                            Facebook
+                        </span>
+
+                    </button>
+
+                </div>
+
+                <!-- REGISTER -->
+                <p class="text-center text-sm text-black-500 mt-7">
+
+                    Don't have account?
+
+                    <a href="register.html" class="text-blue-600 font-medium hover:underline">
+                        Register
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- TOAST -->
+    <div id="toast" class="fixed top-5 right-5 translate-x-[150%] transition-all duration-500 z-50">
+
+        <div id="toast-content" class="px-5 py-3 rounded-xl text-white text-sm font-medium shadow-lg">
+
+            Notifikasi
+
+        </div>
+
+    </div>
+
+    <script src="../script/login.js"></script>
+
+    <script>
+        feather.replace();
+    </script>
+
+</body>
+
+</html>
+
+</html>

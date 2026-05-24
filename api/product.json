@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "title": "Mie Goreng",
+    "price": 5000,
+    "category": "makanan",
+    "image": "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=300&q=80"
+  },
+  {
+    "id": 2,
+    "title": "Bakso",
+    "price": 10000,
+    "category": "makanan",
+    "image": "https://i.pinimg.com/736x/d5/f5/f9/d5f5f9da41e253b585f254cb258255d9.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Nasi Goreng",
+    "price": 10000,
+    "category": "makanan",
+    "image": "https://i.pinimg.com/1200x/f3/9e/3f/f39e3f6b040e412f3ec6136764e5f932.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Es Teh Manis",
+    "price": 5000,
+    "category": "minuman",
+    "image": "https://i.pinimg.com/736x/c3/da/83/c3da83b40b59b1c8a99a726e9f5bf8cc.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Jus Alpukat",
+    "price": 15000,
+    "category": "minuman",
+    "image": "https://i.pinimg.com/736x/9b/04/24/9b04242660773f871c439148c4470316.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Keripik Kentang",
+    "price": 8000,
+    "category": "cemilan",
+    "image": "https://i.pinimg.com/736x/3f/c1/9f/3fc19f99883a1171d70d9916fbe141c1.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Sate Ayam",
+    "price": 18000,
+    "category": "makanan",
+    "image": "https://images.unsplash.com/photo-1529563021893-cc83c992d75d?w=300&q=80"
+  },
+  {
+    "id": 8,
+    "title": "Pisang Goreng",
+    "price": 7000,
+    "category": "cemilan",
+    "image": "https://i.pinimg.com/736x/6c/dd/0d/6cdd0dd249fa9ac094cada0f02c93773.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Kopi Susu",
+    "price": 12000,
+    "category": "minuman",
+    "image": "https://i.pinimg.com/1200x/cb/86/e8/cb86e89f89d4ba779ff29833d629b21c.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Nasi Kuning",
+    "price": 10000,
+    "category": "makanan",
+    "image": "https://i.pinimg.com/1200x/e9/89/4d/e9894d428e3b95eb48481df47cd461d6.jpg"
+  },
+  {
+    "id": 11,
+    "title": "Siomay",
+    "price": 7000,
+    "category": "cemilan",
+    "image": "https://i.pinimg.com/736x/0c/97/aa/0c97aaf559e869125a4e8925336f069e.jpg"
+  },
+  {
+    "id": 12,
+    "title": "Es Doger",
+    "price": 6000,
+    "category": "minuman",
+    "image": "https://i.pinimg.com/736x/ed/6a/89/ed6a8986d8cf9201a3379e0ae465567a.jpg"
+  }
+]

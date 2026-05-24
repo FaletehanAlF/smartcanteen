@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartCanteen</title>
+
+    <link rel="stylesheet" href="../src/output.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-[#f6f6f6] text-gray-800">
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 w-full bg-[#f4c7a1] border-b z-50 ">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center px-6 py-10 ">
+
+            <h1 class="font-bold text-orange-600 text-4xl -ml-25">SmartCanteen</h1>
+
+            <div class="hidden md:flex gap-16 text-base">
+                <a href="#home" class=" text-black-800 font-medium hover:text-blue-600 transition">Home</a>
+                <a href="#about" class=" text-black-800 font-medium hover:text-blue-600 transition duration-600">AboutUs</a>
+                <a href="#features" class="  text-black-800 font-medium hover:text-blue-600 transition duration-600">Features</a>
+                <a href="#menu" class="  text-black-800 font-medium hover:text-blue-600 transition duration-600">Menu</a>
+                <a href="#artikel" class="  text-black-800 font-medium hover:text-blue-600 transition duration-600">Articles</a>
+                <a href="#contact" class=" text-black-800 font-medium hover:text-blue-600 transition duration-600">Contact</a>
+            </div>
+
+            <a href="login.html"
+                class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-600 border border-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition duration-300 -mr-10">
+
+                <i data-feather="user" class="w-4 h-4"></i>
+                <span>Login Akun</span>
+
+            </a>
+
+        </div>
+    </nav>
+
+    <!-- HERO -->
+
+    <section id="home" class="py-25-blue">
+
+        <section class="min-h-screen flex items-center bg-[#f4c7a1]">
+
+            <div class="max-w-7xl mx-auto w-full px-6 mt-16">
+
+                <div class="grid md:grid-cols-2 items-center gap-8">
+
+                    <!-- LEFT -->
+                    <div class="max-w-lg space-y-5 text-center md:text-left">
+
+                        <h1 class="text-6xl font-bold tracking-tight leading-tight mb-2">
+                            SmartCanteen
+                        </h1>
+
+                        <h2 class="text-2xl md:text-4xl text-orange-600 font-medium ">
+                            Pemesanan Makanan Cerdas
+                        </h2>
+
+                        <p class="text-gray-700 text-lg leading-relaxed text-justify mt-5">
+                            Pesan makanan dari kantin sekolah dengan mudah. Tanpa perlu mengantre secara langsung.
+                            Cepat,
+                            praktis, dan efisien.
+                        </p>
+
+                        <!-- BUTTON -->
+                        <div class="flex flex-col sm:flex-row gap-8 pt-4 mt-10">
+
+                            <button
+                                class="inline-flex items-center justify-center gap-3 bg-blue-600 text-white px-7 py-3 rounded-lg text-base font-medium shadow hover:bg-blue-700 hover:scale-105 transition duration-300 cursor-pointer">
+                                <i data-feather="download" class="w-5 h-5"></i>
+                                <span>Download App</span>
+                            </button>
+
+                            <button
+                                class="inline-flex items-center justify-center gap-3 bg-white px-7 py-3 rounded-lg text-base font-medium shadow hover:shadow-md hover:scale-105 transition duration-300 cursor-pointer">
+                                <i data-feather="shopping-cart" class="w-5 h-5"></i>
+                                <span>Pesan Sekarang</span>
+                            </button>
+
+                        </div>
+
+                        <!-- STORE BADGE -->
+                        <div class="flex items-center justify-center md:justify-start gap-8 pt-6">
+
+                            <a href="#" class="hover:scale-105 transition duration-300">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                                    class="h-12 object-contain">
+                            </a>
+
+                            <a href="#" class="hover:scale-105 transition duration-300">
+                                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                                    class="h-12 object-contain">
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <!-- RIGHT (TAMBAHKAN GAMBAR BIAR BALANCE) -->
+                    <div class="hidden md:flex justify-end mr-10">
+
+                        <button class="group active:scale-95 transition duration-150">
+
+                            <img src="../asset/Rectangle 268.png" class="w-[450px] object-contain rounded-xl shadow-lg 
+             transition duration-300 
+             group-hover:scale-105 
+             group-active:scale-95 ">
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about" class="py-45 bg-blue-100 -mb-5">
+
+        <div class="max-w-6xl mx-auto px-6">
+
+            <h2 class="text-3xl font-bold text-center mb-12 -mt-5">
+                Tentang Kami
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-12 w-320 -ml-25">
+
+                <!-- TUJUAN -->
+                <div class="bg-white border rounded-2xl p-7 space-y-4 
+                  hover:shadow-lg hover:-translate-y-1 transition duration-300">
+
+                    <div class="flex items-center gap-2">
+                        <i data-feather="target" class="w-5 h-5"></i>
+                        <h3 class="text-lg font-semibold">Tujuan</h3>
+                    </div>
+
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        SmartCanteen bertujuan untuk menyederhanakan proses pemesanan makanan di kantin sekolah melalui
+                        sistem digital yang cepat, praktis, dan efisien, sehingga siswa dapat memesan tanpa harus
+                        mengantre secara langsung.
+                    </p>
+
+                </div>
+
+                <!-- VISI -->
+                <div class="bg-white border rounded-2xl p-7 space-y-4 
+                  hover:shadow-lg hover:-translate-y-1 transition duration-300">
+
+                    <div class="flex items-center gap-2">
+                        <i data-feather="eye" class="w-5 h-5"></i>
+                        <h3 class="text-lg font-semibold">Visi</h3>
+                    </div>
+
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Menjadi solusi digital yang mempermudah pemesanan makanan di kantin sekolah dengan sistem yang
+                        cepat, praktis, dan efisien, serta meningkatkan kualitas layanan melalui pemanfaatan teknologi
+                        modern.
+                    </p>
+
+                </div>
+
+                <!-- MISI -->
+                <div class="bg-white border rounded-2xl p-7 space-y-4 
+                  hover:shadow-lg hover:-translate-y-1 transition duration-300">
+
+                    <div class="flex items-center gap-2">
+                        <i data-feather="flag" class="w-5 h-5"></i>
+                        <h3 class="text-lg font-semibold">Misi</h3>
+                    </div>
+
+                    <ul class="text-sm text-gray-600 leading-relaxed space-y-2 list-disc pl-4">
+                        <li>Menyediakan sistem pemesanan yang mudah digunakan oleh siswa.</li>
+                        <li>Membantu penjual kantin mengelola pesanan dengan lebih efisien.</li>
+                        <li>Meningkatkan kecepatan layanan dan pengalaman pengguna.</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FEATURES -->
+
+    <section id="features" class="py-30 bg-[#f4c7a1]">
+
+        <section class="">
+
+            <div class="max-w-6xl mx-auto px-6">
+
+                <!-- TITLE -->
+                <h2 class="text-3xl font-bold text-center mb-14">
+                    Features
+                </h2>
+
+                <!-- GRID -->
+                <div class="grid md:grid-cols-3 gap-12">
+
+                    <!-- ITEM 1 -->
+                    <div class="bg-white/60 backdrop-blur-md border rounded-2xl p-6 shadow-md 
+                  hover:shadow-lg hover:-translate-y-1 transition duration-300">
+
+                        <div class="flex items-center gap-4 mb-3">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png"
+                                class="w-10 h-10 object-contain">
+                            <h3 class="text-lg font-semibold">Pemesanan Online</h3>
+                        </div>
+
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Pesan makanan langsung dari aplikasi tanpa harus antre di kantin.
+                        </p>
+
+                    </div>
+
+                    <!-- ITEM 2 -->
+                    <div class="bg-white/60 backdrop-blur-md border rounded-2xl p-6 shadow-md 
+                  hover:shadow-lg hover:-translate-y-1 transition duration-300">
+
+                        <div class="flex items-center gap-4 mb-3">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2920/2920349.png"
+                                class="w-10 h-10 object-contain">
+                            <h3 class="text-lg font-semibold">Status Pesanan</h3>
+                        </div>
+
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Pantau status pesanan secara real-time hingga siap diambil.
+                        </p>
+
+                    </div>
+
+                    <!-- ITEM 3 -->
+                    <div class="bg-white/60 backdrop-blur-md border rounded-2xl p-6 shadow-md 
+                  hover:shadow-lg hover:-translate-y-1 transition duration-300">
+
+                        <div class="flex items-center gap-4 mb-3">
+                            <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png"
+                                class="w-10 h-10 object-contain">
+                            <h3 class="text-lg font-semibold">Menu Favorit</h3>
+                        </div>
+
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Simpan menu favorit untuk pemesanan lebih cepat di kemudian hari.
+                        </p>
+
+                    </div>
+
+                    <!-- ITEM 4 -->
+                    <div class="bg-white/60 backdrop-blur-md border rounded-2xl p-6 shadow-md 
+                  hover:shadow-lg hover:-translate-y-1 transition duration-300">
+
+                        <div class="flex items-center gap-4 mb-3">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png"
+                                class="w-10 h-10 object-contain">
+                            <h3 class="text-lg font-semibold">Keranjang Pesanan</h3>
+                        </div>
+
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Kelola pesanan sebelum checkout dengan sistem keranjang yang praktis.
+                        </p>
+
+                    </div>
+
+                    <!-- ITEM 5 -->
+                    <div class="bg-white/60 backdrop-blur-md border rounded-2xl p-6 shadow-md 
+                  hover:shadow-lg hover:-translate-y-1 transition duration-300">
+
+                        <div class="flex items-center gap-4 mb-3">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2462/2462719.png"
+                                class="w-10 h-10 object-contain">
+                            <h3 class="text-lg font-semibold">Chat Penjual</h3>
+                        </div>
+
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Komunikasi langsung dengan penjual untuk informasi menu atau pesanan.
+                        </p>
+
+                    </div>
+
+                    <!-- ITEM 6 -->
+                    <div class="bg-white/60 backdrop-blur-md border rounded-2xl p-6 shadow-md 
+                  hover:shadow-lg hover:-translate-y-1 transition duration-300">
+
+                        <div class="flex items-center gap-4 mb-3">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2331/2331945.png"
+                                class="w-10 h-10 object-contain">
+                            <h3 class="text-lg font-semibold">Pembayaran Digital</h3>
+                        </div>
+
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Mendukung berbagai metode pembayaran digital yang cepat dan aman.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </section>
+
+    <!-- ARTIKEL -->
+    <section id="artikel" class="py-35 bg-[#cfd9f4]">
+
+        <div class="max-w-7xl mx-auto px-6 display: flex; flex-direction: column; align-items: center;">
+
+            <!-- TITLE -->
+            <h2 class="text-3xl font-bold text-center mb-18">
+                Articles
+            </h2>
+
+            <!-- GRID -->
+            <div class="grid md:grid-cols-3 gap-10">
+
+                <!-- CARD -->
+                <div
+                    class="bg-gray-100 rounded-2xl p-7 shadow-md hover:shadow-xl hover:-translate-y-1 transition duration-300">
+
+                    <!-- IMAGE -->
+                    <div class="relative">
+                        <img src="../asset/Rectangle 308.png" class="w-full h-[240px] object-cover rounded-xl">
+
+                        <span class="absolute top-3 left-3 bg-black/60 text-white text-xs px-2 py-1 rounded">
+                            SmartCanteen
+                        </span>
+                    </div>
+
+                    <!-- CONTENT -->
+                    <div class="pt-5 space-y-3">
+                        <h3 class="font-semibold text-lg leading-snug">
+                            Cara Memesan Makanan dengan Cepat Menggunakan SmartCanteen
+                        </h3>
+
+                        <p class="text-sm text-gray-700 leading-relaxed">
+                            Mengapa sistem pemesanan digital membantu mengurangi antrean di kantin?
+                        </p>
+
+                        <a href="#"
+                            class="inline-block mt-2 bg-blue-600 text-white text-sm px-4 py-2 rounded-md hover:bg-orange-400 transition:duration-600">
+                            Baca selengkapnya
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- CARD -->
+                <div
+                    class="bg-gray-100 rounded-2xl p-7 shadow-md hover:shadow-xl hover:-translate-y-1 transition duration-300">
+
+                    <div class="relative">
+                        <img src="../asset/Rectangle 312.png" class="w-full h-[240px] object-cover rounded-xl">
+
+                        <span class="absolute top-3 left-3 bg-black/60 text-white text-xs px-2 py-1 rounded">
+                            Tips Canteen
+                        </span>
+                    </div>
+
+                    <div class="pt-5 space-y-3">
+                        <h3 class="font-semibold text-lg leading-snug">
+                            Tips untuk Memesan Makanan Lebih Cepat
+                        </h3>
+
+                        <p class="text-sm text-gray-700 leading-relaxed">
+                            Pelajari cara memesan makanan di kantin dengan mudah menggunakan SmartCanteen.
+                        </p>
+
+                        <a href="#"
+                            class="inline-block mt-2 bg-blue-600 text-white text-sm px-4 py-2 rounded-md hover:bg-orange-400 transition:duration-600">
+                            Baca selengkapnya
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- CARD -->
+                <div
+                    class="bg-gray-100 rounded-2xl p-7 shadow-md hover:shadow-xl hover:-translate-y-1 transition duration-300">
+
+                    <div class="relative">
+                        <img src="../asset/Rectangle 316.png" class="w-full h-[240px] object-cover rounded-xl">
+
+                        <span class="absolute top-3 left-3 bg-black/60 text-white text-xs px-2 py-1 rounded">
+                            SmartCanteen
+                        </span>
+                    </div>
+
+                    <div class="pt-5 space-y-3">
+                        <h3 class="font-semibold text-lg leading-snug">
+                            Tips Memilih Makanan Sehat di <br>Kantin Sekolah
+                        </h3>
+
+                        <p class="text-sm text-gray-700 leading-relaxed">
+                            Panduan memilih makanan sehat dan bergizi di kantin sekolah.
+                        </p>
+
+                        <a href="#"
+                            class="inline-block mt-2 bg-blue-600 text-white text-sm px-4 py-2 rounded-md hover:bg-orange-400 transition:duration-600">
+                            Baca selengkapnya
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Menu -->
+    <section class="py-24 bg-[#f4c7a1]" id="menu">
+
+        <div class="max-w-6xl mx-auto px-6 text-center">
+
+            <h2 class="text-3xl font-bold mb-12">
+                Jelajahi Opsi Menu
+            </h2>
+
+            <!-- KATEGORI -->
+            <div class="flex justify-center gap-8 mb-16">
+
+                <!-- BUTTON -->
+                <button class="bg-[#e9d4cc] px-8 py-4 rounded-xl shadow 
+                     flex items-center gap-3 text-base font-medium
+                     transition duration-300
+                     hover:shadow-lg hover:-translate-y-1 hover:scale-105
+                     active:scale-95 active:shadow-md">
+
+                    <span class="text-xl">🍛</span>
+                    Makanan
+                </button>
+
+                <button class="bg-[#e9d4cc] px-8 py-4 rounded-xl shadow 
+                     flex items-center gap-3 text-base font-medium
+                     transition duration-300
+                     hover:shadow-lg hover:-translate-y-1 hover:scale-105
+                     active:scale-95 active:shadow-md">
+
+                    <span class="text-xl">🥤</span>
+                    Minuman
+                </button>
+
+                <button class="bg-[#e9d4cc] px-8 py-4 rounded-xl shadow 
+                     flex items-center gap-3 text-base font-medium
+                     transition duration-300
+                     hover:shadow-lg hover:-translate-y-1 hover:scale-105
+                     active:scale-95 active:shadow-md">
+
+                    <span class="text-xl">🍟</span>
+                    Cemilan
+                </button>
+
+            </div>
+
+            <!-- MENU -->
+            <div id="menu-container" class="grid md:grid-cols-3 gap-10"></div>
+
+        </div>
+
+    </section>
+
+    <!-- Contact -->
+
+    <section id="contact" class="py-24 bg-blue-100 text-black font-bold">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <!-- TITLE -->
+            <div class="text-center mb-14">
+                <h2 class="text-3xl font-bold">
+                    Contact Us
+                </h2>
+            </div>
+
+            <!-- BOX -->
+            <div class="bg-[#f4c7a1] rounded-3xl p-10 md:p-14 shadow-2xl text-black mb-10">
+
+                <div class="grid md:grid-cols-2 gap-14 items-center">
+
+                    <!-- FORM -->
+                    <form action="https://formspree.io/f/mykogrbb" method="POST" class="space-y-6">
+
+                        <input type="hidden" name="_subject" value="Pesan Baru SmartCanteen">
+
+                        <!-- USERNAME -->
+                        <div>
+                            <label class="block text-base mb-2 font-semibold">
+                                Username
+                            </label>
+
+                            <div class="flex items-center bg-gray-100 rounded-xl px-5 py-4">
+                                <i data-feather="user" class="w-5 h-5 text-gray-500"></i>
+
+                                <input type="text" name="username" required placeholder="Masukkan username"
+                                    class="ml-4 w-full bg-transparent outline-none text-base">
+                            </div>
+                        </div>
+
+                        <!-- EMAIL -->
+                        <div>
+                            <label class="block text-base mb-2 font-semibold">
+                                Email
+                            </label>
+
+                            <div class="flex items-center bg-gray-100 rounded-xl px-5 py-4">
+                                <i data-feather="mail" class="w-5 h-5 text-gray-500"></i>
+
+                                <input type="email" name="email" required placeholder="Masukkan email"
+                                    class="ml-4 w-full bg-transparent outline-none text-base">
+                            </div>
+                        </div>
+
+                        <!-- MESSAGE -->
+                        <div>
+                            <label class="block text-base mb-2 font-semibold ">
+                                Message
+                            </label>
+
+                            <div class="flex items-start bg-gray-100 rounded-xl px-5 py-4">
+                                <i data-feather="message-square" class="w-5 h-5 text-gray-500 mt-1"></i>
+
+                                <textarea name="message" rows="5" required placeholder="Tulis pesan..."
+                                    class="ml-4 w-full bg-transparent outline-none text-base resize-none"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- NOTIFIKASI -->
+                        <div id="notif-success"
+                            class="hidden bg-green-500 text-white px-5 py-4 rounded-xl text-sm font-medium shadow-lg">
+                            Pesan berhasil dikirim!
+                        </div>
+
+                        <!-- BUTTON -->
+                        <button type="submit" class="w-full bg-blue-600 text-white py-4 rounded-xl text-lg font-semibold 
+                   hover:bg-orange-400 hover:scale-[1.02] 
+                   active:scale-95 transition duration-300 shadow-md ">
+                            Kirim Pesan
+                        </button>
+
+                    </form>
+
+                    <!-- IMAGE -->
+                    <div class="flex justify-center">
+                        <img src="https://i.pinimg.com/736x/42/27/71/42277172780abf5043438989d49856e2.jpg"
+                            class="w-[380px] rounded-3xl shadow-xl hover:scale-105 transition duration-500">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer class="bg-[#f4c7a1] py-20">
+
+        <div class="max-w-7xl mx-auto px-8">
+
+            <div class="grid md:grid-cols-4 gap-20">
+
+                <!-- BRAND -->
+                <div class="space-y-5">
+
+                    <div class="flex items-center gap-4">
+                        <img src="../asset/photo_6300569139378064996_y.jpg" class="w-16 h-16 rounded-full object-cover">
+                        <h3 class="text-2xl font-bold">SmartCanteen</h3>
+                    </div>
+
+                    <p class="text-lg text-justify text-gray-700 leading-relaxed ">
+                        SmartCanteen adalah platform pemesanan makanan digital
+                        yang membantu siswa memesan makanan dengan cepat tanpa
+                        harus mengantre di kantin.
+                    </p>
+
+
+
+                    <!-- BACK TO TOP -->
+                    <a href="#home" class="inline-flex items-center gap-2 mt-4 border border-black px-5 py-2 rounded-lg 
+                 hover:bg-black hover:text-white transition duration-300">
+
+                        <i data-feather="arrow-up" class="w-4 h-4"></i>
+                        Kembali ke Atas
+                    </a>
+
+                </div>
+
+                <!-- PETA SITUS -->
+                <div class="pl-20">
+                    <h4 class="text-xl font-semibold mb-4">Peta Situs</h4>
+
+                    <ul class="space-y-3 text-base">
+                        <li><a href="#home" class="hover:text-blue-600 transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-blue-600 transition">About Us</a></li>
+                        <li><a href="#features" class="hover:text-blue-600 transition">Features</a></li>
+                        <li><a href="#articles" class="hover:text-blue-600 transition">Articles</a></li>
+                        <li><a href="#menu" class="hover:text-blue-600 transition">Menu</a></li>
+                        <li><a href="#contact" class="hover:text-blue-600 transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- SUPPORT -->
+                <div class="pl-8">
+                    <h4 class="text-xl font-semibold mb-4">Support</h4>
+
+                    <ul class="space-y-3 text-base">
+                        <li><a href="#" class="hover:text-blue-600 transition">Pusat Bantuan</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition">Dukungan Laporan</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition">Keamanan</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition">Tentang Aplikasi</a></li>
+                    </ul>
+                </div>
+
+                <!-- CONTACT -->
+                <div class="space-y-5 pl-10">
+
+                    <h4 class="text-xl font-semibold">Contact</h4>
+
+                    <!-- EMAIL -->
+                    <div class="flex items-center gap-3">
+
+                        <div class=" rounded-lg shadow">
+                            <i data-feather="mail" class="w-5 h-5 text-black"></i>
+                        </div>
+
+                        <span class="text-base">smartcanteen@gmail.com</span>
+
+                    </div>
+
+                    <!-- LOCATION -->
+                    <div class="flex items-center gap-3">
+                        <i data-feather="map-pin" class="w-5 h-5"></i>
+                        <span class="text-base">Depok, Jawa Barat</span>
+                    </div>
+
+                    <!-- PHONE -->
+                    <div class="flex items-center gap-3">
+                        <i data-feather="phone" class="w-5 h-5"></i>
+                        <span class="text-base">+62 812 1901 0664 </span>
+                    </div>
+
+                    <!-- SOCIAL -->
+                    <div class="flex gap-5 pt-4">
+
+                        <a href="https://www.instagram.com/faalen_portofolio"
+                            class="bg-white p-3 rounded-full shadow hover:scale-110 hover:bg-pink-500 hover:text-white transition duration-300">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/faletehan-al-farabi-/"
+                            class="bg-white p-3 rounded-full shadow hover:scale-110 hover:bg-blue-500 hover:text-white transition duration-300">
+                            <i data-feather="linkedin" class="w-5 h-5"></i>
+                        </a>
+
+                        <a href="https://www.facebook.com/share/1GEzcHFyjH/"
+                            class="bg-white p-3 rounded-full shadow hover:scale-110 hover:bg-blue-500 hover:text-white transition duration-300">
+                            <i data-feather="facebook" class="w-5 h-5"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="text-center mt-16 border-t pt-6 text-base">
+                © 2026 SmartCanteen
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script>
+        feather.replace()
+    </script>
+
+    <script src="../script/script.js"></script>
+
+</body>
+
+</html>
