@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartCanteen – Online Food Ordering</title>
+  <link rel="stylesheet" href="./src/output.css" />
+  <script src="https://unpkg.com/feather-icons"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+
+<body class="font-sans bg-[#f6f6f6] text-gray-800 overflow-x-hidden">
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="fixed top-0 left-0 right-0 w-full bg-[#f4c7a1] border-b border-orange-200 z-50">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 flex justify-between items-center h-16 md:h-20">
+
+      <!-- Logo -->
+      <a href="#home" class="font-bold text-orange-600 text-2xl md:text-3xl shrink-0">SmartCanteen</a>
+
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium list-none">
+        <li><a href="#home"     class="text-gray-800 hover:text-blue-600 transition-colors">Home</a></li>
+        <li><a href="#about"    class="text-gray-800 hover:text-blue-600 transition-colors">About Us</a></li>
+        <li><a href="#features" class="text-gray-800 hover:text-blue-600 transition-colors">Features</a></li>
+        <li><a href="#menu"     class="text-gray-800 hover:text-blue-600 transition-colors">Menu</a></li>
+        <li><a href="#artikel"  class="text-gray-800 hover:text-blue-600 transition-colors">Articles</a></li>
+        <li><a href="#contact"  class="text-gray-800 hover:text-blue-600 transition-colors">Contact</a></li>
+      </ul>
+
+      <!-- Desktop Login -->
+      <a href="/view/login.html"
+        class="hidden md:inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-600 border border-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition duration-300 shrink-0">
+        <i data-feather="user" class="w-4 h-4"></i>
+        <span>Login</span>
+      </a>
+
+      <!-- Mobile Hamburger -->
+      <button id="hamburger-btn" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex flex-col justify-center gap-1.5 w-8 h-8 cursor-pointer">
+        <span class="w-6 h-0.5 bg-gray-800 transition-all duration-300 hamburger-line block"></span>
+        <span class="w-6 h-0.5 bg-gray-800 transition-all duration-300 hamburger-line block"></span>
+        <span class="w-6 h-0.5 bg-gray-800 transition-all duration-300 hamburger-line block"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+      class="md:hidden overflow-hidden max-h-0 transition-[max-height] duration-300 ease-in-out bg-[#f4c7a1] border-t border-orange-200">
+      <ul class="px-6 py-4 flex flex-col gap-1 list-none">
+        <li><a href="#home"     class="block py-2.5 text-sm font-medium text-gray-800 hover:text-blue-600 transition-colors">Home</a></li>
+        <li><a href="#about"    class="block py-2.5 text-sm font-medium text-gray-800 hover:text-blue-600 transition-colors">About Us</a></li>
+        <li><a href="#features" class="block py-2.5 text-sm font-medium text-gray-800 hover:text-blue-600 transition-colors">Features</a></li>
+        <li><a href="#menu"     class="block py-2.5 text-sm font-medium text-gray-800 hover:text-blue-600 transition-colors">Menu</a></li>
+        <li><a href="#artikel"  class="block py-2.5 text-sm font-medium text-gray-800 hover:text-blue-600 transition-colors">Articles</a></li>
+        <li><a href="#contact"  class="block py-2.5 text-sm font-medium text-gray-800 hover:text-blue-600 transition-colors">Contact</a></li>
+        <li class="pt-2 border-t border-orange-300">
+          <a href="/view/login.html"
+            class="inline-flex items-center justify-center gap-2 w-full mt-2 px-4 py-2.5 text-sm font-medium text-blue-600 border border-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition duration-300">
+            <i data-feather="user" class="w-4 h-4"></i>
+            <span>Login Account</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="home" class="bg-[#f4c7a1] min-h-screen flex items-center pt-16 md:pt-20">
+    <div class="max-w-7xl mx-auto w-full px-4 md:px-6 py-16 md:py-24">
+      <div class="grid md:grid-cols-2 items-center gap-10 md:gap-16">
+
+        <!-- Left -->
+        <div class="space-y-6 text-center md:text-left">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">SmartCanteen</h1>
+          <p class="text-xl md:text-2xl lg:text-3xl text-orange-600 font-semibold">Online Food Ordering</p>
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+            Order food from the school cafeteria easily. No need to queue in person. Fast, convenient, and efficient.
+          </p>
+
+          <!-- Buttons -->
+          <div class="flex flex-col sm:flex-row gap-3 pt-2 justify-center md:justify-start">
+            <button
+              class="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg text-sm font-semibold shadow hover:bg-blue-700 hover:scale-105 transition duration-300">
+              <i data-feather="download" class="w-4 h-4"></i>
+              <span>Download App</span>
+            </button>
+            <button
+              class="inline-flex items-center justify-center gap-2 bg-white text-gray-800 px-6 py-3 rounded-lg text-sm font-semibold shadow hover:shadow-md hover:scale-105 transition duration-300">
+              <i data-feather="shopping-cart" class="w-4 h-4"></i>
+              <span>Order Now</span>
+            </button>
+          </div>
+
+          <!-- Store Badges -->
+          <div class="flex items-center justify-center md:justify-start gap-6 pt-2">
+            <a href="#" class="hover:scale-105 transition duration-300">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                alt="Get it on Google Play" class="h-10 md:h-12 object-contain" />
+            </a>
+            <a href="#" class="hover:scale-105 transition duration-300">
+              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                alt="Download on the App Store" class="h-10 md:h-12 object-contain" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Right -->
+        <div class="hidden md:flex justify-center">
+          <img src="../asset/Rectangle 268.png" alt="SmartCanteen app preview"
+            class="w-full max-w-md object-contain rounded-xl shadow-lg" />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" class="py-16 md:py-24 bg-blue-100">
+    <div class="max-w-6xl mx-auto px-4 md:px-6">
+
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-10 md:mb-14">About Us</h2>
+
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+        <!-- Objective -->
+        <div class="bg-white border border-gray-100 rounded-2xl p-6 space-y-3 hover:shadow-lg hover:-translate-y-1 transition duration-300">
+          <div class="flex items-center gap-2">
+            <i data-feather="target" class="w-5 h-5 text-orange-500 shrink-0"></i>
+            <h3 class="text-base font-semibold">Objective</h3>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            SmartCanteen aims to simplify the food ordering process in school canteens through a fast, practical, and
+            efficient digital system, allowing students to order without having to queue in person.
+          </p>
+        </div>
+
+        <!-- Vision -->
+        <div class="bg-white border border-gray-100 rounded-2xl p-6 space-y-3 hover:shadow-lg hover:-translate-y-1 transition duration-300">
+          <div class="flex items-center gap-2">
+            <i data-feather="eye" class="w-5 h-5 text-orange-500 shrink-0"></i>
+            <h3 class="text-base font-semibold">Vision</h3>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            To become a digital solution that simplifies food ordering in school canteens with a fast, practical, and
+            efficient system, while improving service quality through the use of modern technology.
+          </p>
+        </div>
+
+        <!-- Mission -->
+        <div class="bg-white border border-gray-100 rounded-2xl p-6 space-y-3 hover:shadow-lg hover:-translate-y-1 transition duration-300 sm:col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2">
+            <i data-feather="flag" class="w-5 h-5 text-orange-500 shrink-0"></i>
+            <h3 class="text-base font-semibold">Mission</h3>
+          </div>
+          <ul class="text-sm text-gray-600 leading-relaxed space-y-2 list-disc pl-4">
+            <li>Provides a booking system that is easy for students to use.</li>
+            <li>Helping canteen vendors manage orders more efficiently.</li>
+            <li>Ensuring food quality and variety for a better canteen experience.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURES ===================== -->
+  <section id="features" class="py-16 md:py-24 bg-[#f4c7a1]">
+    <div class="max-w-6xl mx-auto px-4 md:px-6">
+
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-10 md:mb-14">Features</h2>
+
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+        <!-- Feature 1 -->
+        <div class="bg-white/70 backdrop-blur-md border border-white/50 rounded-2xl p-5 shadow hover:shadow-lg hover:-translate-y-1 transition duration-300 flex flex-col gap-3">
+          <div class="flex items-center gap-3">
+            <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Online Ordering icon" class="w-10 h-10 object-contain shrink-0" />
+            <h3 class="text-sm md:text-base font-semibold">Online Ordering</h3>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed">Order food directly from the app without having to queue at the canteen.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-white/70 backdrop-blur-md border border-white/50 rounded-2xl p-5 shadow hover:shadow-lg hover:-translate-y-1 transition duration-300 flex flex-col gap-3">
+          <div class="flex items-center gap-3">
+            <img src="https://cdn-icons-png.flaticon.com/512/2920/2920349.png" alt="Order Status icon" class="w-10 h-10 object-contain shrink-0" />
+            <h3 class="text-sm md:text-base font-semibold">Order Status</h3>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed">View order status — processed, prepared, or ready to pick up — in real time.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-white/70 backdrop-blur-md border border-white/50 rounded-2xl p-5 shadow hover:shadow-lg hover:-translate-y-1 transition duration-300 flex flex-col gap-3">
+          <div class="flex items-center gap-3">
+            <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="Favorites Menu icon" class="w-10 h-10 object-contain shrink-0" />
+            <h3 class="text-sm md:text-base font-semibold">Favorites Menu</h3>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed">Save your favorite menus for faster ordering in the future.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="bg-white/70 backdrop-blur-md border border-white/50 rounded-2xl p-5 shadow hover:shadow-lg hover:-translate-y-1 transition duration-300 flex flex-col gap-3">
+          <div class="flex items-center gap-3">
+            <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="Order Cart icon" class="w-10 h-10 object-contain shrink-0" />
+            <h3 class="text-sm md:text-base font-semibold">Order Cart</h3>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed">Manage orders before checkout with a convenient cart system.</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="bg-white/70 backdrop-blur-md border border-white/50 rounded-2xl p-5 shadow hover:shadow-lg hover:-translate-y-1 transition duration-300 flex flex-col gap-3">
+          <div class="flex items-center gap-3">
+            <img src="https://cdn-icons-png.flaticon.com/512/2462/2462719.png" alt="Chat Seller icon" class="w-10 h-10 object-contain shrink-0" />
+            <h3 class="text-sm md:text-base font-semibold">Chat Seller</h3>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed">Communicate directly with the seller for menu or order information.</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="bg-white/70 backdrop-blur-md border border-white/50 rounded-2xl p-5 shadow hover:shadow-lg hover:-translate-y-1 transition duration-300 flex flex-col gap-3">
+          <div class="flex items-center gap-3">
+            <img src="https://cdn-icons-png.flaticon.com/512/2331/2331945.png" alt="Digital Payments icon" class="w-10 h-10 object-contain shrink-0" />
+            <h3 class="text-sm md:text-base font-semibold">Digital Payments</h3>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed">Supports a variety of fast and secure digital payment methods.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ARTICLES ===================== -->
+  <section id="artikel" class="py-16 md:py-24 bg-[#cfd9f4]">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-10 md:mb-14">Articles</h2>
+
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+        <!-- Card 1 -->
+        <article class="bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col">
+          <div class="relative">
+            <img src="../asset/Rectangle 308.png" alt="How to Order Food Quickly Using SmartCanteen"
+              class="w-full h-48 md:h-56 object-cover" />
+            <span class="absolute top-3 left-3 bg-black/60 text-white text-xs px-2 py-1 rounded">SmartCanteen</span>
+          </div>
+          <div class="p-5 flex flex-col gap-3 flex-1">
+            <h3 class="font-semibold text-base leading-snug">How to Order Food Quickly Using SmartCanteen</h3>
+            <p class="text-sm text-gray-600 leading-relaxed flex-1">Why does a digital ordering system help reduce queues in the canteen?</p>
+            <a href="#" class="inline-block mt-auto bg-blue-600 text-white text-sm px-4 py-2 rounded-md hover:bg-orange-400 transition duration-300 w-fit">Read More</a>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col">
+          <div class="relative">
+            <img src="../asset/Rectangle 312.png" alt="Tips for Ordering Food Faster"
+              class="w-full h-48 md:h-56 object-cover" />
+            <span class="absolute top-3 left-3 bg-black/60 text-white text-xs px-2 py-1 rounded">Tips Canteen</span>
+          </div>
+          <div class="p-5 flex flex-col gap-3 flex-1">
+            <h3 class="font-semibold text-base leading-snug">Tips for Ordering Food Faster</h3>
+            <p class="text-sm text-gray-600 leading-relaxed flex-1">Learn how to easily order food in the canteen using SmartCanteen.</p>
+            <a href="#" class="inline-block mt-auto bg-blue-600 text-white text-sm px-4 py-2 rounded-md hover:bg-orange-400 transition duration-300 w-fit">Read More</a>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col sm:col-span-2 md:col-span-1">
+          <div class="relative">
+            <img src="../asset/Rectangle 316.png" alt="Tips for Choosing Healthy Food in the School Canteen"
+              class="w-full h-48 md:h-56 object-cover" />
+            <span class="absolute top-3 left-3 bg-black/60 text-white text-xs px-2 py-1 rounded">SmartCanteen</span>
+          </div>
+          <div class="p-5 flex flex-col gap-3 flex-1">
+            <h3 class="font-semibold text-base leading-snug">Tips for Choosing Healthy Food in the School Canteen</h3>
+            <p class="text-sm text-gray-600 leading-relaxed flex-1">Guide to choosing healthy and nutritious food in the school canteen.</p>
+            <a href="#" class="inline-block mt-auto bg-blue-600 text-white text-sm px-4 py-2 rounded-md hover:bg-orange-400 transition duration-300 w-fit">Read More</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MENU ===================== -->
+  <section id="menu" class="py-16 md:py-24 bg-[#f4c7a1]">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 text-center">
+
+      <h2 class="text-2xl md:text-3xl font-bold mb-8 md:mb-12">Explore Menu Options</h2>
+
+      <!-- Category Buttons -->
+      <div class="flex flex-wrap justify-center gap-3 mb-10">
+        <button
+          class="bg-[#e9d4cc] px-6 py-3 rounded-xl shadow flex items-center gap-2 text-sm font-medium hover:shadow-lg hover:-translate-y-0.5 hover:scale-105 active:scale-95 transition duration-300">
+          <span class="text-lg">🍛</span>
+          <span>Food</span>
+        </button>
+        <button
+          class="bg-[#e9d4cc] px-6 py-3 rounded-xl shadow flex items-center gap-2 text-sm font-medium hover:shadow-lg hover:-translate-y-0.5 hover:scale-105 active:scale-95 transition duration-300">
+          <span class="text-lg">🥤</span>
+          <span>Drink</span>
+        </button>
+        <button
+          class="bg-[#e9d4cc] px-6 py-3 rounded-xl shadow flex items-center gap-2 text-sm font-medium hover:shadow-lg hover:-translate-y-0.5 hover:scale-105 active:scale-95 transition duration-300">
+          <span class="text-lg">🍟</span>
+          <span>Snacks</span>
+        </button>
+      </div>
+
+      <!-- Menu Grid (populated by JS) -->
+      <div id="menu-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" class="py-16 md:py-24 bg-blue-100">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-10 md:mb-14">Contact Us</h2>
+
+      <div class="bg-[#f4c7a1] rounded-3xl p-6 md:p-10 lg:p-14 shadow-xl">
+        <div class="grid md:grid-cols-2 gap-8 md:gap-14 items-center">
+
+          <!-- Form -->
+          <form action="https://formspree.io/f/mykogrbb" method="POST" class="space-y-5">
+            <input type="hidden" name="_subject" value="Pesan Baru SmartCanteen" />
+
+            <!-- Username -->
+            <div>
+              <label for="username" class="block text-sm font-semibold mb-1.5">Username</label>
+              <div class="flex items-center bg-white rounded-xl px-4 py-3 gap-3">
+                <i data-feather="user" class="w-5 h-5 text-gray-400 shrink-0"></i>
+                <input id="username" type="text" name="username" required placeholder="Enter your username"
+                  class="w-full bg-transparent outline-none text-sm text-gray-700" />
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label for="email" class="block text-sm font-semibold mb-1.5">Your Email</label>
+              <div class="flex items-center bg-white rounded-xl px-4 py-3 gap-3">
+                <i data-feather="mail" class="w-5 h-5 text-gray-400 shrink-0"></i>
+                <input id="email" type="email" name="email" required placeholder="Enter your email"
+                  class="w-full bg-transparent outline-none text-sm text-gray-700" />
+              </div>
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label for="message" class="block text-sm font-semibold mb-1.5">Message</label>
+              <div class="flex items-start bg-white rounded-xl px-4 py-3 gap-3">
+                <i data-feather="message-square" class="w-5 h-5 text-gray-400 shrink-0 mt-0.5"></i>
+                <textarea id="message" name="message" rows="4" required placeholder="Write your message..."
+                  class="w-full bg-transparent outline-none text-sm text-gray-700 resize-none"></textarea>
+              </div>
+            </div>
+
+            <!-- Success notice -->
+            <div id="notif-success"
+              class="hidden bg-green-500 text-white px-4 py-3 rounded-xl text-sm font-medium shadow">
+              Message sent successfully!
+            </div>
+
+            <button type="submit"
+              class="w-full bg-blue-600 text-white py-3 rounded-xl text-sm font-semibold hover:bg-orange-400 hover:scale-[1.01] active:scale-95 transition duration-300 shadow">
+              Send Message
+            </button>
+          </form>
+
+          <!-- Image -->
+          <div class="flex justify-center">
+            <img src="https://i.pinimg.com/736x/42/27/71/42277172780abf5043438989d49856e2.jpg"
+              alt="Contact illustration"
+              class="w-full max-w-xs md:max-w-sm rounded-3xl shadow-xl hover:scale-105 transition duration-500" />
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="bg-[#f4c7a1] py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
+
+        <!-- Brand -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <img src="../asset/photo_6300569139378064996_y.jpg" alt="SmartCanteen logo"
+              class="w-12 h-12 rounded-full object-cover shrink-0" />
+            <span class="text-lg font-bold">SmartCanteen</span>
+          </div>
+          <p class="text-sm text-gray-700 leading-relaxed">
+            SmartCanteen adalah platform pemesanan makanan digital yang membantu siswa memesan makanan dengan cepat
+            tanpa harus mengantre di kantin.
+          </p>
+          <a href="#home"
+            class="inline-flex items-center gap-2 border border-gray-800 px-4 py-2 rounded-lg text-sm hover:bg-gray-800 hover:text-white transition duration-300">
+            <i data-feather="arrow-up" class="w-4 h-4"></i>
+            <span>Kembali ke Atas</span>
+          </a>
+        </div>
+
+        <!-- Site Map -->
+        <div>
+          <h4 class="text-base font-semibold mb-4">Peta Situs</h4>
+          <ul class="space-y-2 text-sm list-none">
+            <li><a href="#home"     class="hover:text-blue-600 transition-colors">Home</a></li>
+            <li><a href="#about"    class="hover:text-blue-600 transition-colors">About Us</a></li>
+            <li><a href="#features" class="hover:text-blue-600 transition-colors">Features</a></li>
+            <li><a href="#artikel"  class="hover:text-blue-600 transition-colors">Articles</a></li>
+            <li><a href="#menu"     class="hover:text-blue-600 transition-colors">Menu</a></li>
+            <li><a href="#contact"  class="hover:text-blue-600 transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div>
+          <h4 class="text-base font-semibold mb-4">Support</h4>
+          <ul class="space-y-2 text-sm list-none">
+            <li><a href="#" class="hover:text-blue-600 transition-colors">Pusat Bantuan</a></li>
+            <li><a href="#" class="hover:text-blue-600 transition-colors">Dukungan Laporan</a></li>
+            <li><a href="#" class="hover:text-blue-600 transition-colors">Keamanan</a></li>
+            <li><a href="#" class="hover:text-blue-600 transition-colors">Tentang Aplikasi</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="space-y-3">
+          <h4 class="text-base font-semibold">Contact</h4>
+          <div class="flex items-center gap-2.5 text-sm">
+            <i data-feather="mail" class="w-4 h-4 shrink-0"></i>
+            <span>smartcanteen@gmail.com</span>
+          </div>
+          <div class="flex items-center gap-2.5 text-sm">
+            <i data-feather="map-pin" class="w-4 h-4 shrink-0"></i>
+            <span>Depok, Jawa Barat</span>
+          </div>
+          <div class="flex items-center gap-2.5 text-sm">
+            <i data-feather="phone" class="w-4 h-4 shrink-0"></i>
+            <span>+62 812 1901 0664</span>
+          </div>
+
+          <!-- Social -->
+          <div class="flex gap-3 pt-2">
+            <a href="https://www.instagram.com/faalen_portofolio" aria-label="Instagram"
+              class="bg-white p-2.5 rounded-full shadow hover:scale-110 hover:bg-pink-500 hover:text-white transition duration-300">
+              <i data-feather="instagram" class="w-4 h-4"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/faletehan-al-farabi-/" aria-label="LinkedIn"
+              class="bg-white p-2.5 rounded-full shadow hover:scale-110 hover:bg-blue-600 hover:text-white transition duration-300">
+              <i data-feather="linkedin" class="w-4 h-4"></i>
+            </a>
+            <a href="https://www.facebook.com/share/1GEzcHFyjH/" aria-label="Facebook"
+              class="bg-white p-2.5 rounded-full shadow hover:scale-110 hover:bg-blue-500 hover:text-white transition duration-300">
+              <i data-feather="facebook" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright -->
+      <div class="text-center mt-10 border-t border-orange-300 pt-5 text-sm text-gray-600">
+        © 2026 SmartCanteen. All rights reserved.
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <script>feather.replace()</script>
+
+  <!-- Hamburger Menu -->
+  <script>
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileMenu   = document.getElementById('mobile-menu');
+    const lines        = document.querySelectorAll('.hamburger-line');
+    let isOpen = false;
+
+    function openMenu() {
+      isOpen = true;
+      hamburgerBtn.setAttribute('aria-expanded', 'true');
+      mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+      lines[0].style.transform = 'rotate(45deg) translateY(8px)';
+      lines[1].style.opacity   = '0';
+      lines[2].style.transform = 'rotate(-45deg) translateY(-8px)';
+    }
+
+    function closeMenu() {
+      isOpen = false;
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+      mobileMenu.style.maxHeight = '0';
+      lines[0].style.transform = 'rotate(0deg) translateY(0)';
+      lines[1].style.opacity   = '1';
+      lines[2].style.transform = 'rotate(0deg) translateY(0)';
+    }
+
+    hamburgerBtn.addEventListener('click', () => isOpen ? closeMenu() : openMenu());
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+  </script>
+
+  <script src="../script/script.js"></script>
+
+</body>
+</html>
