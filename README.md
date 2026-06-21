@@ -2,7 +2,7 @@
 
 A modern web-based school canteen ordering system that allows students to browse menus, place orders, and reduce waiting times through a simple and efficient digital platform.
 
-![SmartCanteen Banner](./asset/banner.png)
+
 
 ---
 
@@ -128,7 +128,7 @@ SMARTCANTEEN/
 Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/smartcanteen.git
+git clone https://github.com/FaletehanAlF/smartcanteen.git
 ```
 
 Move into project directory
@@ -159,27 +159,12 @@ or
 npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
 ```
 
-Build production CSS
-
-```bash
-npm run build
-```
-
-or
-
-```bash
-npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --minify
-```
-
----
-
 ## 📄 Sample package.json Scripts
 
 ```json
 {
   "scripts": {
     "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch",
-    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --minify"
   }
 }
 ```
